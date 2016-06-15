@@ -13,4 +13,16 @@
     <string name="v_a">Việt - Anh</string>
     <string name="message_delete_list">Xóa Danh Sách  Từ</string>
     <string name="message_traslator_document">Dịch Văn Bản</string>
+    <string name="MailTitle">fdsfd</string>
+    <string name="error">Error</string>
+    <string name="copy">Copy</string>
+    <string name="speech_prompt">Hãy nói từ hoặc cụm từ cần tra...</string>
+
+    <string-array name="Mcf">
+        <item>SVQ29udmVyVGlvblRyYW5zbGF0b3IwMg==ghnmh,aarMWO5iqA0C638euI2ydLlgXL76he/Guvl7C6sd6fs=</item>
+        <item>CaQ29udmVyVGlvblRyYW5zbGF0b3IwNA===Sc==,bcLELJ80RQJ9TowA9M29EXJ+jw70SLXG1WRCA+Y/Bnk=</item>
+        <item>7FQ29udmVyVGlvblRyYW5zbGF0b3IwNQ==ukJK2,XhzKzfUuv0m0mcU2XEV5p/keztyhVpbd6kWdPRRu6U0=</item>
+        <item>vPQ29udmVyc3Rpb25UcmFuc2xhdG9yS2V5SQ==scSD5,oBHXpTM03Ig3bO00A4CtzfzmJWPjHOStvgXlyJxgWQo=</item>
+
+    </string-array>
 </resources>

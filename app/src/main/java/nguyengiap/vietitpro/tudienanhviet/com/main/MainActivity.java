@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
+import nguyengiap.vietitpro.tudienanhviet.com.common.Common;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentFavorite;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentHistory;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentMain;
@@ -46,36 +47,28 @@ public class MainActivity extends AppCompatActivity {
                 new NavigationTabBar.Model.Builder(
                         getResources().getDrawable(R.drawable.ic_magnifier),
                         Color.parseColor(colors[0]))
-//                        .selectedIcon(getResources().getDrawable(R.drawable.ic_sixth))
                         .title("Tra từ")
-//                        .badgeTitle("NTB")
                         .build()
         );
         models.add(
                 new NavigationTabBar.Model.Builder(
                         getResources().getDrawable(R.drawable.ic_world),
                         Color.parseColor(colors[1]))
-//                        .selectedIcon(getResources().getDrawable(R.drawable.ic_eighth))
                         .title("Dịch Văn bản")
-//                        .badgeTitle("with")
                         .build()
         );
         models.add(
                 new NavigationTabBar.Model.Builder(
                         getResources().getDrawable(R.drawable.ic_favourite),
                         Color.parseColor(colors[2]))
-//                        .selectedIcon(getResources().getDrawable(R.drawable.ic_seventh))
                         .title("Yêu Thích")
-//                        .badgeTitle("state")
                         .build()
         );
         models.add(
                 new NavigationTabBar.Model.Builder(
                         getResources().getDrawable(R.drawable.ic_hhistory),
                         Color.parseColor(colors[3]))
-//                        .selectedIcon(getResources().getDrawable(R.drawable.ic_eighth))
                         .title("Lịch Sử")
-//                        .badgeTitle("icon")
                         .build()
         );
 //        models.add(
@@ -99,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(final int position) {
                 navigationTabBar.getModels().get(position).hideBadge();
+                Common.hideSoftInputFromWindow(MainActivity.this);
             }
 
             @Override
@@ -122,4 +116,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 500);
     }
+
+
 }

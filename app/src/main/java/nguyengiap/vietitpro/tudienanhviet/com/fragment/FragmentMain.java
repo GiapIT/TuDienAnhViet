@@ -35,15 +35,16 @@ public class FragmentMain extends Fragment implements IClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mMainLayout = inflater.inflate(R.layout.fragment_fragment_main, container, false);
+        initView();
+        initListSearch();
+        return mMainLayout;
+    }
+
+    private void initView() {
         lvListSearch = (RecyclerView) mMainLayout.findViewById(R.id.lvWord);
         lvListSearch.setHasFixedSize(true);
         lvListSearch.setLayoutManager(new StaggeredGridLayoutManager(1,
                 StaggeredGridLayoutManager.VERTICAL));
-        initListSearch();
-
-
-
-        return mMainLayout;
     }
 
     @Override

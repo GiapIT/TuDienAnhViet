@@ -30,4 +30,16 @@
         <attr name="cpb_cornerRadius" format="dimension"/>
         <attr name="cpb_paddingProgress" format="dimension"/>
     </declare-styleable>
+    <style name="Widget.MaterialSheetFab.Note" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_margin">@dimen/note_spacing</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="cardBackgroundColor">@color/gray</item>
+        <item name="cardCornerRadius">@dimen/note_corner_radius</item>
+    </style>
+
+    <dimen name="note_spacing">4dp</dimen>
+    <dimen name="note_corner_radius">2dp</dimen>
 </resources>

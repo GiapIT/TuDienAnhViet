@@ -5,63 +5,94 @@
     android:background="@color/brown"
     android:orientation="vertical"
     tools:context="nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentMain">
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/brown"
-        android:minHeight="100dp"
-       >
-    <LinearLayout
-        android:id="@+id/layoutsearch"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="@dimen/size_15dp"
-        android:layout_marginRight="@dimen/size_15dp"
-        android:layout_marginTop="@dimen/size_30dp"
-        android:background="@drawable/circle"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:minHeight="100dp">
 
-        <ImageView
-            android:layout_width="@dimen/size_25dp"
-            android:layout_height="@dimen/size_25dp"
-            android:layout_marginLeft="@dimen/size_5"
-            android:src="@drawable/search" />
-
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+        <LinearLayout
+            android:id="@+id/layoutsearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/size_15dp"
             android:layout_marginRight="@dimen/size_15dp"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:hint="@string/search"
-            android:imeOptions="actionDone"
-            android:inputType="textAutoComplete|textAutoCorrect"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray" />
-        <ImageView
-            android:layout_marginRight="@dimen/size_5"
-            android:layout_width="@dimen/size_35dp"
-            android:layout_height="@dimen/size_35dp"
-            android:src="@drawable/touch"
-           />
-        <ImageView
-            android:id="@+id/delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_action_navigation_close"
-            android:visibility="gone" />
-    </LinearLayout>
-</android.support.design.widget.AppBarLayout>
+            android:layout_marginTop="@dimen/size_30dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="@dimen/size_25dp"
+                android:layout_height="@dimen/size_25dp"
+                android:layout_marginLeft="@dimen/size_5"
+                android:src="@drawable/search" />
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="@dimen/size_15dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:hint="@string/search"
+                android:imeOptions="actionDone"
+                android:inputType="textAutoComplete|textAutoCorrect"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray" />
+
+            <ImageView
+                android:layout_width="@dimen/size_35dp"
+                android:layout_height="@dimen/size_35dp"
+                android:layout_marginRight="@dimen/size_5"
+                android:src="@drawable/touch" />
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_action_navigation_close"
+                android:visibility="gone" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lvWord"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/brown"></android.support.v7.widget.RecyclerView>
+        android:background="@color/brown"
+        android:visibility="gone"></android.support.v7.widget.RecyclerView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/text_size_20dp">
+
+        <include layout="@layout/layout_verb" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_10dp" />
+
+        <include layout="@layout/layout_verb" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_10dp" />
+
+        <include layout="@layout/layout_verb" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_10dp" />
+
+        <include layout="@layout/layout_verb" />
+    </LinearLayout>
 </LinearLayout>
