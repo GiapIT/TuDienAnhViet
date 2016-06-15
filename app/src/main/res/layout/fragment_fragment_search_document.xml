@@ -1,54 +1,23 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cpb_grey"
-    android:orientation="vertical"
-  >
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginTop="@dimen/size_30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_30dp"
         android:background="@color/cpb_grey"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/language_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/vietnam"
-                android:textColor="@color/text_black_87"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:id="@+id/btnconverlanguage"
-                android:layout_width="45dp"
-                android:layout_height="25dp"
-                android:background="@drawable/selectbutton"
-                android:src="@drawable/ic_opposite5" />
-
-            <TextView
-                android:id="@+id/language_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/english"
-                android:textColor="@color/text_black_87"
-                android:textSize="18sp" />
-        </LinearLayout>
+            android:layout_marginLeft="@dimen/size_10dp"
+            android:text="@string/message_traslator_document"
+            android:textColor="@color/cpb_red"
+            android:textSize="@dimen/text_size_18dp" />
 
         <LinearLayout
             android:id="@+id/layout1"
@@ -69,30 +38,56 @@
                 android:gravity="left|top" />
 
             <ImageView
+                android:id="@+id/btngooglesound"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/microphone" />
+
+            <ImageView
                 android:id="@+id/btndelete"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/select_delete"
-                android:src="@drawable/ic_cross_mark1" />
+                android:src="@drawable/ic_cross_mark1"
+                android:visibility="gone" />
         </LinearLayout>
 
-        <nguyengiap.vietitpro.tudienanhviet.com.view.CircularProgressButton
-            android:layout_width="196dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/cpb_white"
-            android:textSize="18sp"
-            app:cpb_cornerRadius="48dp"
-            app:cpb_selectorComplete="@drawable/complete_state_selector"
-            app:cpb_selectorError="@drawable/error_state_selector"
-            app:cpb_selectorIdle="@drawable/idle_state_selector"
-            app:cpb_textComplete="@string/translator"
-            app:cpb_textError="@string/Error"
-            app:cpb_textIdle="@string/translator" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_10dp"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/background_circle_"
+                android:gravity="center"
+                android:text="@string/e_v"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18dp" />
+
+            <View
+                android:layout_width="@dimen/size_30dp"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/background_circle_"
+                android:gravity="center"
+                android:text="@string/v_a"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18dp" />
+        </LinearLayout>
+
+
         <RelativeLayout
             android:id="@+id/layout2"
             android:layout_width="match_parent"
@@ -107,16 +102,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
-                android:minHeight="80dp"
-                android:inputType="textMultiLine"
                 android:background="@color/white"
-                android:gravity="left|top" />
+                android:gravity="left|top"
+                android:inputType="textMultiLine"
+                android:minHeight="80dp" />
+
             <ImageView
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
                 android:id="@+id/btncopppy"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/selector_sound"
@@ -124,7 +120,6 @@
                 android:src="@drawable/copy" />
 
         </RelativeLayout>
-
 
 
     </LinearLayout>

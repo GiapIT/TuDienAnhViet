@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_black_white"
+    android:gravity="center_vertical"
+    android:minHeight="60dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_black_white"
+        android:gravity="center_vertical"
+        android:minHeight="60dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_black_white"
+            android:gravity="center_vertical"
+            android:minHeight="60dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/size_20dp"
+                android:paddingRight="@dimen/size_15dp">
+
+                <TextView
+                    android:id="@+id/word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Love"
+                    android:textColor="@color/black" />
+
+                <TextView
+
+                    android:id="@+id/phonetic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Love"
+                    android:textColor="@color/cpb_red"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtsummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:layout_marginRight="5dp"
+                android:text="fdsfds"
+                android:textColor="@color/TextTitle" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/btnsound"
+            android:layout_width="@dimen/size_30dp"
+            android:layout_height="@dimen/size_30dp"
+            android:src="@drawable/ic_audio_uk" />
+        <ImageView
+            android:id="@+id/btnfavo"
+            android:layout_width="@dimen/size_30dp"
+            android:layout_height="@dimen/size_30dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_star_on"
+             />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/size_30dp"
+        android:layout_marginRight="@dimen/size_20dp"
+        android:background="@color/brown" />
+</LinearLayout>

@@ -9,4 +9,8 @@
     <string name="english">English</string>
     <string name="translator">Dịch</string>
     <string name="Error">Error</string>
+    <string name="e_v">Anh - Việt</string>
+    <string name="v_a">Việt - Anh</string>
+    <string name="message_delete_list">Xóa Danh Sách  Từ</string>
+    <string name="message_traslator_document">Dịch Văn Bản</string>
 </resources>

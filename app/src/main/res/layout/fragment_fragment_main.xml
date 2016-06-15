@@ -43,7 +43,12 @@
             android:inputType="textAutoComplete|textAutoCorrect"
             android:textColor="@color/black"
             android:textColorHint="@color/gray" />
-
+        <ImageView
+            android:layout_marginRight="@dimen/size_5"
+            android:layout_width="@dimen/size_35dp"
+            android:layout_height="@dimen/size_35dp"
+            android:src="@drawable/touch"
+           />
         <ImageView
             android:id="@+id/delete"
             android:layout_width="30dp"

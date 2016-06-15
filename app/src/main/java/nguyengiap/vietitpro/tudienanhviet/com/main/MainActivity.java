@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
+import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentFavorite;
+import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentHistory;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentMain;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentSearchDocument;
 
@@ -32,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
         List<Fragment> listFramentPage = new ArrayList<>();
         listFramentPage.add(new FragmentMain());
         listFramentPage.add(new FragmentSearchDocument());
-        listFramentPage.add(new FragmentSearchDocument());
-        listFramentPage.add(new FragmentSearchDocument());
-        listFramentPage.add(new FragmentSearchDocument());
+        listFramentPage.add(new FragmentFavorite());
+        listFramentPage.add(new FragmentHistory());
         MyPageAdapter myPageAdapter = new MyPageAdapter(getSupportFragmentManager(),listFramentPage);
         viewPager.setAdapter(myPageAdapter);
         final String[] colors = getResources().getStringArray(R.array.default_preview);
