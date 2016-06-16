@@ -170,7 +170,7 @@ public class FragmentMain extends Fragment implements IClickListener, View.OnCli
                 public void onItemClick(View view, int position) {
                     mSearchView.close(false);
                     TextView textView = (TextView) view.findViewById(R.id.textView_item_text);
-                    String query = textView.getText().toString();
+                     String query = textView.getText().toString();
                 }
             });
             mSearchView.setAdapter(searchAdapter);
