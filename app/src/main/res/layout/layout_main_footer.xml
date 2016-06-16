@@ -19,8 +19,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/size_60dp"
-            android:layout_height="@dimen/size_60dp"
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_50dp"
             android:background="@drawable/windown" />
 
         <TextView
@@ -41,8 +41,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/size_60dp"
-            android:layout_height="@dimen/size_60dp"
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_50dp"
             android:background="@drawable/apps_facebook" />
 
         <TextView
@@ -63,8 +63,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/size_60dp"
-            android:layout_height="@dimen/size_60dp"
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_50dp"
             android:background="@drawable/misc_star" />
 
         <TextView
@@ -84,8 +84,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/size_60dp"
-            android:layout_height="@dimen/size_60dp"
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_50dp"
             android:background="@drawable/apps_scope" />
 
         <TextView

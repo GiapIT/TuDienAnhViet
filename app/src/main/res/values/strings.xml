@@ -34,4 +34,5 @@
     </string-array>
     <string name="title_activity_verb">VerbActivity</string>
     <string name="search_hint">Tìm kiếm</string>
+    <string name="search_content_description"><![CDATA[Content Description<]]></string>
 </resources>

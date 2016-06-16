@@ -24,7 +24,7 @@
             android:focusable="false"
             android:paddingLeft="@dimen/search_icon_padding"
             android:paddingRight="@dimen/search_icon_padding"
-            android:src="@drawable/ic_magnifier13" />
+            android:src="@drawable/ic_abs__ic_search" />
        <!-- <TextView
             android:text="dasdasd"
             android:id="@+id/suggestion_text"
