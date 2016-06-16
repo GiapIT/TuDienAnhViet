@@ -8,38 +8,99 @@
         <item name="colorPrimaryDark">@color/brown</item>
         <item name="android:windowNoTitle">true</item>
     </style>
-
+    <style name="AppTheme.Activity" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/app</item>
+        <item name="colorPrimaryDark">@color/app</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <color name="app">#1589e4</color>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <declare-styleable name="CircularProgressButton">
-        <attr name="cpb_selectorIdle" format="reference"/>
-        <attr name="cpb_selectorComplete" format="reference"/>
-        <attr name="cpb_selectorError" format="reference"/>
-        <attr name="cpb_textComplete" format="string"/>
-        <attr name="cpb_textIdle" format="string"/>
-        <attr name="cpb_textError" format="string"/>
-        <attr name="cpb_textProgress" format="string"/>
-        <attr name="cpb_colorProgress" format="color"/>
-        <attr name="cpb_colorIndicator" format="color"/>
-        <attr name="cpb_colorIndicatorBackground" format="color"/>
-        <attr name="cpb_iconError" format="reference"/>
-        <attr name="cpb_iconComplete" format="reference"/>
-        <attr name="cpb_cornerRadius" format="dimension"/>
-        <attr name="cpb_paddingProgress" format="dimension"/>
+        <attr name="cpb_selectorIdle" format="reference" />
+        <attr name="cpb_selectorComplete" format="reference" />
+        <attr name="cpb_selectorError" format="reference" />
+        <attr name="cpb_textComplete" format="string" />
+        <attr name="cpb_textIdle" format="string" />
+        <attr name="cpb_textError" format="string" />
+        <attr name="cpb_textProgress" format="string" />
+        <attr name="cpb_colorProgress" format="color" />
+        <attr name="cpb_colorIndicator" format="color" />
+        <attr name="cpb_colorIndicatorBackground" format="color" />
+        <attr name="cpb_iconError" format="reference" />
+        <attr name="cpb_iconComplete" format="reference" />
+        <attr name="cpb_cornerRadius" format="dimension" />
+        <attr name="cpb_paddingProgress" format="dimension" />
     </declare-styleable>
+
     <style name="Widget.MaterialSheetFab.Note" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">70dp</item>
         <item name="android:layout_margin">@dimen/note_spacing</item>
         <item name="android:foreground">?selectableItemBackground</item>
         <item name="android:clickable">true</item>
-        <item name="cardBackgroundColor">@color/gray</item>
+        <item name="cardBackgroundColor">@color/white</item>
         <item name="cardCornerRadius">@dimen/note_corner_radius</item>
+    </style>
+
+    <style name="Theme.Tyle.Text" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_13dp</item>
+        <item name="android:textColor">@color/TextTitle</item>
     </style>
 
     <dimen name="note_spacing">4dp</dimen>
     <dimen name="note_corner_radius">2dp</dimen>
+
+
+
+    ///////////////////
+    <style name="MSV_ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:paddingLeft">@dimen/search_icon_padding</item>
+        <item name="android:paddingRight">@dimen/search_icon_padding</item>
+    </style>
+
+
+    <dimen name="search_icon_padding">12dp</dimen>
+    <color name="theme_secondary_text_inverted">#8affffff</color>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MaterialSearchViewStyle">
+        <!-- Background for the search bar-->
+        <item name="searchBackground">@color/app</item>
+
+
+        <!-- Change clear text icon-->
+        <item name="searchCloseIcon">@drawable/ic_action_navigation_close_inverted</item>
+
+        <!-- Change up icon-->
+        <item name="searchBackIcon">@drawable/ic_action_navigation_arrow_back_inverted</item>
+
+        <!-- Change icon for the suggestions-->
+        <item name="searchSuggestionIcon">@drawable/ic_magnifier13</item>
+
+        <!-- Change background for the suggestions list view-->
+        <item name="searchSuggestionBackground">@android:color/white</item>
+
+        <!-- Change text color for edit text. This will also be the color of the cursor-->
+        <item name="android:textColor">@color/white</item>
+
+        <!-- Change hint text color for edit text-->
+        <item name="android:textColorHint">@color/theme_secondary_text_inverted</item>
+
+        <!-- Hint for edit text-->
+        <item name="android:hint">@string/search_hint</item>
+    </style>
 </resources>

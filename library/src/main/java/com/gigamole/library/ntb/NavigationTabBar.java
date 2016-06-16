@@ -75,7 +75,7 @@ public class NavigationTabBar extends View implements ViewPager.OnPageChangeList
     private final static int DEFAULT_BADGE_ANIMATION_DURATION = 200;
     private final static int DEFAULT_BADGE_REFRESH_ANIMATION_DURATION = 100;
     private final static int DEFAULT_ANIMATION_DURATION = 300;
-    private final static int DEFAULT_INACTIVE_COLOR = Color.parseColor("#9f90af");
+    private final static int DEFAULT_INACTIVE_COLOR = Color.parseColor("#727272");
     private final static int DEFAULT_ACTIVE_COLOR = Color.WHITE;
 
     private final static float MIN_FRACTION = 0.0F;

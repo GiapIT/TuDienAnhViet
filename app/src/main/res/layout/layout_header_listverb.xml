@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:minHeight="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:textSize="@dimen/text_size_13dp"
+            android:padding="3dp"
+            android:id="@+id/SimplePresent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Nguyên thể"
+            android:textColor="@color/white"
+            />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="17dp"
+            android:background="@color/orange" />
+
+        <TextView
+            android:id="@+id/SimplePast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:textSize="@dimen/text_size_13dp"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Quá khứ"
+            android:textColor="@color/white"
+            />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="17dp"
+            android:background="@color/orange" />
+
+        <TextView
+            android:padding="3dp"
+            android:textSize="@dimen/text_size_13dp"
+            android:id="@+id/PastPraticiple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Phân từ 2"
+            android:textColor="@color/white"
+            />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="17dp"
+            android:background="@color/orange" />
+
+        <TextView
+            android:textSize="@dimen/text_size_13dp"
+            android:padding="3dp"
+            android:id="@+id/PresentParticiple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Tiếp diễn"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+</LinearLayout>

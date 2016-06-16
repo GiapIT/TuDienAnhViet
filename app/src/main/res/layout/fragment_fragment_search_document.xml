@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/size_10dp"
             android:text="@string/message_traslator_document"
-            android:textColor="@color/cpb_red"
+            android:textColor="@color/black"
             android:textSize="@dimen/text_size_18dp" />
 
         <LinearLayout

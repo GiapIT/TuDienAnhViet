@@ -100,22 +100,24 @@ public class FragmentSearchDocument extends Fragment implements View.OnClickList
     private void eventTraslate(final String word, final int chooseTraslate) {
 
         try {
-            Common.hideSoftInputFromWindow(getActivity());
-            final ProgressDialog ringProgressDialog = ProgressDialog.show(getContext(), "", "Please Waitting...");
-            ringProgressDialog.setCancelable(true);
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    final String strResult = Common.UpdateTranslate(word, chooseTraslate);
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            txtOutPutText.setText(strResult);
-                            ringProgressDialog.dismiss();
-                        }
-                    });
-                }
-            }).start();
+            if (!word.isEmpty()) {
+                Common.hideSoftInputFromWindow(getActivity());
+                final ProgressDialog ringProgressDialog = ProgressDialog.show(getContext(), "", "Please Waitting...");
+                ringProgressDialog.setCancelable(true);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final String strResult = Common.UpdateTranslate(word, chooseTraslate);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                txtOutPutText.setText(strResult);
+                                ringProgressDialog.dismiss();
+                            }
+                        });
+                    }
+                }).start();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -17,6 +17,13 @@
     <string name="error">Error</string>
     <string name="copy">Copy</string>
     <string name="speech_prompt">Hãy nói từ hoặc cụm từ cần tra...</string>
+    <string name="title_activity_favorite">Danh sách từ của bạn</string>
+    <string name="title_activity_history">Danh sách lịch sử tra từ</string>
+    <string name="title_windown">Cửa xổ tra nhanh</string>
+    <string name="title_face">Share Facebook</string>
+    <string name="title_rate_app">Đánh giá ứng dụng</string>
+    <string name="title_feedback">Gửi phải hồi</string>
+    <string name="title_verb">Động từ bất quy tắc</string>
 
     <string-array name="Mcf">
         <item>SVQ29udmVyVGlvblRyYW5zbGF0b3IwMg==ghnmh,aarMWO5iqA0C638euI2ydLlgXL76he/Guvl7C6sd6fs=</item>
@@ -25,4 +32,6 @@
         <item>vPQ29udmVyc3Rpb25UcmFuc2xhdG9yS2V5SQ==scSD5,oBHXpTM03Ig3bO00A4CtzfzmJWPjHOStvgXlyJxgWQo=</item>
 
     </string-array>
+    <string name="title_activity_verb">VerbActivity</string>
+    <string name="search_hint">Tìm kiếm</string>
 </resources>

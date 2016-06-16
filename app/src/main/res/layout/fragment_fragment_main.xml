@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brown"
+    android:background="@color/cpb_grey"
     android:orientation="vertical"
     tools:context="nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentMain">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brown"
+        android:background="@color/cpb_grey"
         android:minHeight="100dp">
 
         <LinearLayout
@@ -50,7 +50,8 @@
                 android:layout_width="@dimen/size_35dp"
                 android:layout_height="@dimen/size_35dp"
                 android:layout_marginRight="@dimen/size_5"
-                android:src="@drawable/touch" />
+                android:src="@drawable/touch"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/delete"
@@ -65,35 +66,29 @@
         android:id="@+id/lvWord"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/brown"></android.support.v7.widget.RecyclerView>
+        android:visibility="gone"></android.support.v7.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:gravity="center"
+        android:background="@color/cpb_grey"
         android:orientation="vertical"
-        android:padding="@dimen/text_size_20dp"
-        android:visibility="gone">
+        android:padding="@dimen/text_size_10dp"
+        android:visibility="visible">
 
-        <include layout="@layout/layout_verb" />
+        <include layout="@layout/layout_main_footer" />
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_10dp" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <include layout="@layout/layout_verb" />
+            <include layout="@layout/layout_verb_bqt" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_10dp" />
+            <include layout="@layout/layout_verb" />
 
-        <include layout="@layout/layout_verb" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_10dp" />
-
-        <include layout="@layout/layout_verb" />
+            <include layout="@layout/layout_verb" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

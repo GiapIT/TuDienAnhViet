@@ -13,6 +13,7 @@ import java.util.List;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
 import nguyengiap.vietitpro.tudienanhviet.com.common.Common;
+import nguyengiap.vietitpro.tudienanhviet.com.data.SQLiteDataController;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentFavorite;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentHistory;
 import nguyengiap.vietitpro.tudienanhviet.com.fragment.FragmentMain;
@@ -27,7 +28,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horizontal_ntb);
+        isCreateDB();
         initUI();
+    }
+    private void isCreateDB() {
+        SQLiteDataController cl = new SQLiteDataController(this);
+        try {
+            cl.isCreatedDatabase();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void initUI() {

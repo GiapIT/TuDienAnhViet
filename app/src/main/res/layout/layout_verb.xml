@@ -18,17 +18,30 @@
                 android:id="@+id/image_app"
                 android:layout_width="@dimen/size_50dp"
                 android:layout_height="@dimen/size_50dp"
-                android:background="@drawable/icon512" />
+                android:background="@drawable/nguphap" />
 
-            <TextView
-                android:layout_marginLeft="@dimen/text_size_15dp"
-                android:textSize="@dimen/text_size_20dp"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="bottom"
-                android:text="Học Ngữ Pháp Tiếng Anh" />
-
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <TextView
+                   android:layout_marginLeft="@dimen/text_size_15dp"
+                   android:textSize="@dimen/text_size_18dp"
+                   android:textColor="@color/TextTitle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:text="Học Ngữ Pháp Tiếng Anh" />
+               <TextView
+                   android:gravity="bottom"
+                   android:layout_marginLeft="@dimen/text_size_15dp"
+                   android:textSize="@dimen/text_size_16dp"
+                   android:textColor="@color/brown"
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:text="Click vào để học" />
+           </LinearLayout>
         </LinearLayout>
 
 

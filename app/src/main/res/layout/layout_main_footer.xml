@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cpb_grey"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/size_20dp"
+    android:paddingLeft="@dimen/size_10dp"
+    android:paddingRight="@dimen/size_10dp"
+    android:paddingTop="@dimen/size_15dp">
+
+    <LinearLayout
+        android:background="@drawable/selectbutton_gray"
+        android:id="@+id/layout_windown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_60dp"
+            android:layout_height="@dimen/size_60dp"
+            android:background="@drawable/windown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_10dp"
+            android:text="@string/title_windown"
+            android:theme="@style/Theme.Tyle.Text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_face"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/selectbutton_gray"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_60dp"
+            android:layout_height="@dimen/size_60dp"
+            android:background="@drawable/apps_facebook" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_10dp"
+            android:text="@string/title_face"
+            android:theme="@style/Theme.Tyle.Text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_rate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/selectbutton_gray"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_60dp"
+            android:layout_height="@dimen/size_60dp"
+            android:background="@drawable/misc_star" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_10dp"
+            android:text="@string/title_rate_app"
+            android:theme="@style/Theme.Tyle.Text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_feedback"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_60dp"
+            android:layout_height="@dimen/size_60dp"
+            android:background="@drawable/apps_scope" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_10dp"
+            android:text="@string/title_feedback"
+            android:theme="@style/Theme.Tyle.Text" />
+    </LinearLayout>
+</LinearLayout>

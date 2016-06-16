@@ -462,7 +462,7 @@ public class Common {
             for (final ResolveInfo app : activityList) {
                 if ((app.activityInfo.name).contains("android.gm")) {
                     final ComponentName name = new ComponentName(app.activityInfo.applicationInfo.packageName, app.activityInfo.name);
-                    sendFeedBack.putExtra(Intent.EXTRA_EMAIL, new String[]{"phamkeit@gmail.com"});
+                    sendFeedBack.putExtra(Intent.EXTRA_EMAIL, new String[]{"giapit17121994@gmail.com"});
 
                     String strSubject = activity.getString(R.string.MailTitle);
 
@@ -542,7 +542,6 @@ public class Common {
             if (!isGotoFacebook) {
                 for (final ResolveInfo app : activityList) {
                     if (app.activityInfo.name.contains("facebook")) {
-                        isGotoFacebook = true;
                         final ActivityInfo activity = app.activityInfo;
                         final ComponentName name = new ComponentName(
                                 activity.applicationInfo.packageName,
