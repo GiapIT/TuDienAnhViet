@@ -53,7 +53,10 @@
         <item name="android:textSize">@dimen/text_size_13dp</item>
         <item name="android:textColor">@color/TextTitle</item>
     </style>
-
+    <style name="Theme.Tyle.Image" parent="">
+        <item name="android:layout_height">@dimen/size_50dp</item>
+        <item name="android:layout_width">@dimen/size_50dp</item>
+    </style>
     <dimen name="note_spacing">4dp</dimen>
     <dimen name="note_corner_radius">2dp</dimen>
 
@@ -89,7 +92,7 @@
         <item name="searchBackIcon">@drawable/ic_action_navigation_arrow_back_inverted</item>
 
         <!-- Change icon for the suggestions-->
-        <item name="searchSuggestionIcon">@drawable/ic_magnifier13</item>
+        <item name="searchSuggestionIcon">@drawable/ic_abs__ic_search</item>
 
         <!-- Change background for the suggestions list view-->
         <item name="searchSuggestionBackground">@android:color/white</item>
