@@ -28,17 +28,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Love"
                 android:textColor="@color/black" />
 
             <TextView
-
                 android:id="@+id/phonetic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Love"
                 android:textColor="@color/cpb_red"
                 android:textStyle="italic" />
         </LinearLayout>
@@ -49,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/size_30dp"
             android:layout_marginRight="5dp"
-            android:text="fdsfds"
+            android:maxLines="2"
             android:textColor="@color/TextTitle" />
     </LinearLayout>
 
