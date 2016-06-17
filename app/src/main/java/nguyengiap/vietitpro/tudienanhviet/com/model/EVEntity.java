@@ -12,6 +12,10 @@ public class EVEntity {
     public EVEntity() {
     }
 
+    public EVEntity(String word) {
+        this.word = word;
+    }
+
     public EVEntity(String word, String means) {
         this.word = word;
         this.means = means;

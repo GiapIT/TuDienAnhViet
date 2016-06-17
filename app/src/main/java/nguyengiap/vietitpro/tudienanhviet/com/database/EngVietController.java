@@ -12,13 +12,25 @@ import nguyengiap.vietitpro.tudienanhviet.com.model.EVEntity;
 
 public class EngVietController extends DatabaseController {
 
-    private static String ROW_LIMIT = "1000";
+    private static String ROW_LIMIT = null;
 
     public EngVietController(Context con) {
         super(con);
         createdDatabaseIfNotExits();
     }
 
+//    public ArrayList<EVEntity> getAllDict() {
+//        ArrayList<EVEntity> allEntity = new ArrayList<>();
+//        if (getAllEV() != null && getAllEV().isEmpty()) {
+//            allEntity.addAll(getAllEV());
+//        }
+//        if (getAllVE() != null && getAllVE().isEmpty()) {
+//            allEntity.addAll(getAllVE());
+//        }
+//        return allEntity;
+//    }
+
+    //ANH - VIET
     public ArrayList<EVEntity> getAllEV() {
         return getEVByKeyword(null);
     }
@@ -68,7 +80,7 @@ public class EngVietController extends DatabaseController {
                             engVietEntity.setMeans(cursor.getString(i));
                             engVietEntity.setPhonic(StringConvert.getPhonicFromMeans(cursor.getString(i)));
                             engVietEntity.setSimpleMeans(
-                                StringConvert.getSimpleMeans(engVietEntity.getWord(),cursor.getString(i)));
+                                    StringConvert.getSimpleMeans(engVietEntity.getWord(), cursor.getString(i)));
                         }
                     }
                     listEVEntity.add(engVietEntity);
@@ -80,31 +92,38 @@ public class EngVietController extends DatabaseController {
     }
 
     //VIET - ANH
-//    public ArrayList<EVEntity> getAllVE(String keyword) {
-//        ArrayList<EVEntity> listEVEntity = new ArrayList<>();
-//        String selection = null;
-//        String[] selectionArgs = null;
-//        if (!TextUtils.isEmpty(keyword)) {
-//            selection = IEngViet.WORD + "=?";
-//            selectionArgs = new String[]{String.valueOf(keyword)};
-//        }
-//        try {
-//            openDataBase();
-//            Cursor cursor = database.query(IEngViet.VIET_ENG_TABLE,
-//                    new String[]{IEngViet.WORD, IEngViet.MEAN},
-//                    selection, //selection
-//                    selectionArgs, //selectionArgs
-//                    null, //groupBy
-//                    null, //having
-//                    null, //orderBy
-//                    ROW_LIMIT);
-//            listEVEntity = getAllEVFromCursor(cursor);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            listEVEntity = null;
-//        } finally {
-//            close();
-//        }
-//        return listEVEntity;
-//    }
+    public ArrayList<EVEntity> getAllVE() {
+        return getVEByKeyword(null);
+    }
+
+    public ArrayList<EVEntity> getVEByKeyword(String keyword) {
+        ArrayList<EVEntity> listEVEntity = new ArrayList<>();
+        String selection = null;
+        String[] selectionArgs = null;
+        if (!TextUtils.isEmpty(keyword)) {
+            selection = IEngViet.WORD + "=?";
+            selectionArgs = new String[]{String.valueOf(keyword)};
+        }
+        try {
+            openDataBase();
+//            String selectQuery = "SELECT  * FROM " + IEngViet.VIET_ENG_TABLE + " , "
+//                    + IEngViet.ENG_VIET_TABLE;
+//            Cursor cursor = database.rawQuery(selectQuery, null);
+            Cursor cursor = database.query(IEngViet.VIET_ENG_TABLE,
+                    new String[]{IEngViet.WORD, IEngViet.MEAN},
+                    selection, //selection
+                    selectionArgs, //selectionArgs
+                    null, //groupBy
+                    null, //having
+                    null, //orderBy
+                    ROW_LIMIT);
+            listEVEntity = getAllEVFromCursor(cursor);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            listEVEntity = null;
+        } finally {
+            close();
+        }
+        return listEVEntity;
+    }
 }

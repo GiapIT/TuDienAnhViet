@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
+import nguyengiap.vietitpro.tudienanhviet.com.model.EVEntity;
 
 // TODO file:///E:/Android/SearchView/sample/build/outputs/lint-results-debug.html
 // TODO file:///E:/Android/SearchView/searchview/build/outputs/lint-results-debug.html
@@ -37,8 +38,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
 
     protected final SearchHistoryTable mHistoryDatabase;
     protected String key = " ";
-    protected List<SearchItem> mResultList = new ArrayList<>();
-    protected List<SearchItem> mSuggestionsList = new ArrayList<>();
+    protected List<EVEntity> mResultList = new ArrayList<>();
+    protected List<EVEntity> mSuggestionsList = new ArrayList<>();
     protected OnItemClickListener mItemClickListener;
 
     @SuppressWarnings("unused")
@@ -46,18 +47,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
         mHistoryDatabase = new SearchHistoryTable(context);
     }
 
-    public SearchAdapter(Context context, List<SearchItem> suggestionsList) {
+    public SearchAdapter(Context context, List<EVEntity> suggestionsList) {
         mSuggestionsList = suggestionsList;
         mHistoryDatabase = new SearchHistoryTable(context);
     }
 
     @SuppressWarnings("unused")
-    public List<SearchItem> getSuggestionsList() {
+    public List<EVEntity> getSuggestionsList() {
         return mSuggestionsList;
     }
 
     @SuppressWarnings("unused")
-    public void setSuggestionsList(List<SearchItem> suggestionsList) {
+    public void setSuggestionsList(List<EVEntity> suggestionsList) {
         mSuggestionsList = suggestionsList;
     }
 
@@ -76,15 +77,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
                 if (!TextUtils.isEmpty(constraint)) {
                     key = constraint.toString().toLowerCase(Locale.getDefault());
 
-                    List<SearchItem> results = new ArrayList<>();
-                    List<SearchItem> history = new ArrayList<>();
+                    List<EVEntity> results = new ArrayList<>();
+                    List<EVEntity> history = new ArrayList<>();
                     if (!mHistoryDatabase.getAllItems().isEmpty()) {
                         history.addAll(mHistoryDatabase.getAllItems());
                     }
                     history.addAll(mSuggestionsList);
 
-                    for (SearchItem str : history) {
-                        String string = str.get_text().toString().toLowerCase(Locale.getDefault());
+                    for (EVEntity str : history) {
+                        String string = str.getWord().toLowerCase(Locale.getDefault());
                         if (string.contains(key)) {
                             results.add(str);
                         }
@@ -108,8 +109,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
                 if (results.values != null) {
                     List<?> result = (ArrayList<?>) results.values;
                     for (Object object : result) {
-                        if (object instanceof SearchItem) {
-                            mResultList.add((SearchItem) object);
+                        if (object instanceof EVEntity) {
+                            mResultList.add((EVEntity) object);
                         }
                     }
                 } else {
@@ -132,20 +133,20 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
 
     @Override
     public void onBindViewHolder(ResultViewHolder viewHolder, int position) {
-        SearchItem item = mResultList.get(position);
+        EVEntity item = mResultList.get(position);
 
-        viewHolder.icon_left.setImageResource(item.get_icon());
+//        viewHolder.icon_left.setImageResource(item.get_icon());
         viewHolder.icon_left.setColorFilter(SearchView.getIconColor(), PorterDuff.Mode.SRC_IN);
         viewHolder.text.setTextColor(SearchView.getTextColor());
 
-        String string = item.get_text().toString().toLowerCase(Locale.getDefault());
+        String string = item.getWord().toString().toLowerCase(Locale.getDefault());
 
         if (string.contains(key)) {
             SpannableString s = new SpannableString(string);
             s.setSpan(new ForegroundColorSpan(SearchView.getTextHighlightColor()), string.indexOf(key), string.indexOf(key) + key.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             viewHolder.text.setText(s, TextView.BufferType.SPANNABLE);
         } else {
-            viewHolder.text.setText(item.get_text());
+            viewHolder.text.setText(item.getWord());
         }
     }
 

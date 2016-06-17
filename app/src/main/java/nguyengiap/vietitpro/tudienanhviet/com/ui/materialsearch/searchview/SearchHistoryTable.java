@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
+import nguyengiap.vietitpro.tudienanhviet.com.model.EVEntity;
 
 
 public class SearchHistoryTable {
@@ -32,12 +33,12 @@ public class SearchHistoryTable {
         dbHelper.close();
     }
 
-    public void addItem(SearchItem item) {
-        if (!checkText(item.get_text().toString())) {
+    public void addItem(EVEntity item) {
+        if (!checkText(item.getWord())) {
             db = dbHelper.getWritableDatabase();
 
             ContentValues values = new ContentValues();
-            values.put(SearchHistoryDatabase.SEARCH_HISTORY_COLUMN_TEXT, item.get_text().toString());
+            values.put(SearchHistoryDatabase.SEARCH_HISTORY_COLUMN_TEXT, item.getWord());
 
             db.insert(SearchHistoryDatabase.SEARCH_HISTORY_TABLE, null, values);
             db.close();
@@ -61,8 +62,8 @@ public class SearchHistoryTable {
         return hasObject;
     }
 
-    public List<SearchItem> getAllItems() {
-        List<SearchItem> list = new ArrayList<>();
+    public List<EVEntity> getAllItems() {
+        List<EVEntity> list = new ArrayList<>();
 
         String selectQuery =
                 "SELECT * FROM " + SearchHistoryDatabase.SEARCH_HISTORY_TABLE +
@@ -73,9 +74,9 @@ public class SearchHistoryTable {
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                SearchItem item = new SearchItem();
-                item.set_icon(R.drawable.search_ic_history_black_24dp);
-                item.set_text(cursor.getString(1));
+                EVEntity item = new EVEntity();
+//                item.set_icon(R.drawable.search_ic_history_black_24dp);
+                item.setWord(cursor.getString(1));
                 list.add(item);
             } while (cursor.moveToNext());
         }
