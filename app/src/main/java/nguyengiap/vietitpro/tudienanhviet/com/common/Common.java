@@ -238,7 +238,21 @@ public class Common {
         String urlRate = "https://play.google.com/store/apps/details?id=";
         showDetail(activity, urlRate + pakageName);
     }
-
+    public static boolean openApp(Context context, String packageLink) {
+        String packageName = getPackage(packageLink);
+        PackageManager manager = context.getPackageManager();
+        Intent i = manager.getLaunchIntentForPackage(packageName);
+        if (i == null) {
+            return false;
+            //throw new PackageManager.NameNotFoundException();
+        }
+        i.addCategory(Intent.CATEGORY_LAUNCHER);
+        context.startActivity(i);
+        return true;
+    }
+    private static String getPackage(String packageName) {
+        return packageName.split("=")[1];
+    }
     /*  // translator
       public static String UpdateTranslate(String strValue) {
 

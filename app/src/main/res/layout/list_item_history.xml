@@ -13,17 +13,18 @@
         android:gravity="center_vertical"
         android:minHeight="60dp"
         android:orientation="horizontal">
+
         <ImageView
-            android:layout_marginLeft="@dimen/size_10dp"
             android:id="@+id/btnfavo"
             android:layout_width="@dimen/size_30dp"
             android:layout_height="@dimen/size_30dp"
-            android:src="@drawable/ic_history6"
-            />
+            android:layout_marginLeft="@dimen/size_10dp"
+            android:src="@drawable/ic_history6" />
+
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/selector_black_white"
             android:gravity="center_vertical"
             android:minHeight="60dp"
@@ -66,13 +67,21 @@
                 android:text="fdsfds"
                 android:textColor="@color/TextTitle" />
         </LinearLayout>
+        <!--  <ImageView
+              android:layout_marginRight="@dimen/size_10dp"
+              android:id="@+id/btnsound"
+              android:layout_width="@dimen/size_30dp"
+              android:layout_height="@dimen/size_30dp"
+              android:src="@drawable/ic_audio_uk" />
+  -->
         <ImageView
-            android:layout_marginRight="@dimen/size_10dp"
-            android:id="@+id/btnsound"
-            android:layout_width="@dimen/size_30dp"
-            android:layout_height="@dimen/size_30dp"
-            android:src="@drawable/ic_audio_uk" />
-
+            android:id="@+id/btnDeleteText"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="@dimen/size_15dp"
+            android:background="@drawable/select_cirlce_gray"
+            android:src="@drawable/ic_action_navigation_close"
+            android:textColor="@color/TextTitle" />
     </LinearLayout>
 
     <View
