@@ -24,21 +24,21 @@ public class MainActivitDefault extends AppCompatActivity {
     }
 
     private void initListSearch() {
-        ArrayList<DictEntity> list = new ArrayList<>();
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        list.add(new DictEntity(1, "Love"));
-        AdaptetListSearch mListSearchAdapter = new AdaptetListSearch(this, list);
-        lvListSearch.setHasFixedSize(true);
-        lvListSearch.setLayoutManager(new StaggeredGridLayoutManager(1,
-                StaggeredGridLayoutManager.VERTICAL));
-        lvListSearch.setAdapter(mListSearchAdapter);
-        mListSearchAdapter.notifyDataSetChanged();
+//        ArrayList<DictEntity> list = new ArrayList<>();
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        list.add(new DictEntity(1, "Love"));
+//        AdaptetListSearch mListSearchAdapter = new AdaptetListSearch(this, list);
+//        lvListSearch.setHasFixedSize(true);
+//        lvListSearch.setLayoutManager(new StaggeredGridLayoutManager(1,
+//                StaggeredGridLayoutManager.VERTICAL));
+//        lvListSearch.setAdapter(mListSearchAdapter);
+//        mListSearchAdapter.notifyDataSetChanged();
     }
 }

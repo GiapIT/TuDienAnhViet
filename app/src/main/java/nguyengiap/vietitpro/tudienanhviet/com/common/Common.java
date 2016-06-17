@@ -576,4 +576,12 @@ public class Common {
         }
 
     }
+
+    public static String getAppPackageName(){
+        return Application.getHKApplicationContext().getPackageName();
+    }
+
+    public static String getDatabaseDefaultPath(){
+        return String.format("//data//data//%s//databases//", getAppPackageName());
+    }
 }

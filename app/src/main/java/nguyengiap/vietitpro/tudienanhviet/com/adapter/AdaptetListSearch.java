@@ -2,17 +2,18 @@ package nguyengiap.vietitpro.tudienanhviet.com.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
-import nguyengiap.vietitpro.tudienanhviet.com.model.DictEntity;
+import nguyengiap.vietitpro.tudienanhviet.com.model.EVEntity;
 
 /**
  * Created by Amin Ghabi on 13/09/15.
@@ -21,9 +22,9 @@ import nguyengiap.vietitpro.tudienanhviet.com.model.DictEntity;
 public class AdaptetListSearch extends RecyclerView.Adapter<AdaptetListSearch.RadioViewHolder> {
 
     private Context context;
-    private List<DictEntity> listVoca;
+    private List<EVEntity> listVoca;
 
-    public AdaptetListSearch(Context context, List<DictEntity> listVoca) {
+    public AdaptetListSearch(Context context, List<EVEntity> listVoca) {
         this.context = context;
         this.listVoca = listVoca;
     }
@@ -36,11 +37,14 @@ public class AdaptetListSearch extends RecyclerView.Adapter<AdaptetListSearch.Ra
 
     @Override
     public void onBindViewHolder(RadioViewHolder holder, final int position) {
-        DictEntity item = listVoca.get(position);
-        holder.txt_word.setText(item.getSword().toUpperCase());
-        holder.txt_phonetic.setText("/ "+item.getSphonetic()+" /");
-        holder.txt_summary.setText(item.getSsummary());
-
+        EVEntity item = listVoca.get(position);
+        holder.txt_word.setText(item.getWord().toUpperCase());
+        if(!TextUtils.isEmpty(item.getPhonic())) {
+            holder.txt_phonetic.setText(item.getPhonic());
+        }
+        if(!TextUtils.isEmpty(item.getSimpleMeans())) {
+            holder.txt_summary.setText(item.getSimpleMeans());
+        }
     }
 
     @Override
@@ -58,13 +62,11 @@ public class AdaptetListSearch extends RecyclerView.Adapter<AdaptetListSearch.Ra
             txt_word= (TextView) itemView.findViewById(R.id.word);
             txt_phonetic= (TextView) itemView.findViewById(R.id.phonetic);
             txt_summary= (TextView) itemView.findViewById(R.id.txtsummary);
-
             itemView.setOnClickListener(this);
         }
         @Override
         public void onClick(View v) {
             Toast.makeText(context,"aaa",Toast.LENGTH_LONG).show();
-
         }
     }
 }
