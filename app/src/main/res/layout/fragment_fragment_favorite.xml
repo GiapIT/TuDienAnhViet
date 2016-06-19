@@ -30,7 +30,7 @@
             <ImageView
                 android:background="@drawable/selectbutton_gray"
                 android:layout_marginRight="@dimen/size_10dp"
-                android:id="@+id/btnfavo"
+                android:id="@+id/btnDeleteAll"
                 android:layout_width="@dimen/size_30dp"
                 android:layout_height="@dimen/size_30dp"
                 android:src="@drawable/recycle" />

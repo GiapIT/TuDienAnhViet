@@ -16,12 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="65dp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/lvWord"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"></android.support.v7.widget.RecyclerView>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,7 +25,11 @@
             android:visibility="visible">
 
             <include layout="@layout/layout_main_footer" />
-
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,7 +40,7 @@
 
                 <include layout="@layout/layout_verb" />
 
-                <include layout="@layout/layout_verb" />
+                <include layout="@layout/layout_verb_2" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
