@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.Locale;
 
 import nguyengiap.vietitpro.tudienanhviet.com.R;
-import nguyengiap.vietitpro.tudienanhviet.com.app.Application;
 
 
 public class SearchView extends FrameLayout implements View.OnClickListener { // Filter.FilterListener
@@ -73,6 +72,7 @@ public class SearchView extends FrameLayout implements View.OnClickListener { //
     private ImageView mBackImageView;
     private ImageView mVoiceImageView;
     private ImageView mEmptyImageView;
+    private TextView mChangeSearchImageView;
     private Activity mActivity = null;
     private Fragment mFragment = null;
     private android.support.v4.app.Fragment mSupportFragment = null;
@@ -90,6 +90,8 @@ public class SearchView extends FrameLayout implements View.OnClickListener { //
     private boolean mVoice = true;
     private boolean mIsSearchOpen = false;
     private SavedState mSavedState;
+    boolean isCheckChooseDic = false;
+    IChooseDicationary iChooseDicationary;
 
     // ---------------------------------------------------------------------------------------------
     public SearchView(Context context) {
@@ -184,8 +186,12 @@ public class SearchView extends FrameLayout implements View.OnClickListener { //
         mShadowView.setOnClickListener(this);
         mShadowView.setVisibility(View.GONE);
 
+        mChangeSearchImageView = (TextView) findViewById(R.id.imageView_change_search);
+        mChangeSearchImageView.setOnClickListener(this);
+
         mBackImageView = (ImageView) findViewById(R.id.imageView_arrow_back);
         mBackImageView.setOnClickListener(this);
+
 
         mVoiceImageView = (ImageView) findViewById(R.id.imageView_mic);
         mVoiceImageView.setOnClickListener(this);
@@ -467,6 +473,12 @@ public class SearchView extends FrameLayout implements View.OnClickListener { //
     public void setVoice(boolean voice, android.support.v4.app.Fragment context) {
         mSupportFragment = context;
         setVoice(voice);
+    }
+
+
+    @SuppressWarnings("unused")
+    public void setOnclickChooseDictionary(android.support.v4.app.Fragment context) {
+        iChooseDicationary = (IChooseDicationary) context;
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -752,6 +764,16 @@ public class SearchView extends FrameLayout implements View.OnClickListener { //
             if (mEditText.length() > 0) {
                 mEditText.getText().clear();
             }
+        }
+        if (v.getId() == R.id.imageView_change_search) {
+            if (!isCheckChooseDic) {
+                mChangeSearchImageView.setText("V-A");
+                isCheckChooseDic = true;
+            } else {
+                mChangeSearchImageView.setText("A-V");
+                isCheckChooseDic = false;
+            }
+            iChooseDicationary.onClickChooseDictionary(isCheckChooseDic);
         }
     }
 

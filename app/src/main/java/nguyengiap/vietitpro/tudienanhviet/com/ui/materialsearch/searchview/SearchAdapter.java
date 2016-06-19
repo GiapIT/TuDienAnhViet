@@ -135,7 +135,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
     public void onBindViewHolder(ResultViewHolder viewHolder, int position) {
         EVEntity item = mResultList.get(position);
 
-//        viewHolder.icon_left.setImageResource(item.get_icon());
+        viewHolder.icon_left.setImageResource(R.drawable.ic_abs__ic_search);
         viewHolder.icon_left.setColorFilter(SearchView.getIconColor(), PorterDuff.Mode.SRC_IN);
         viewHolder.text.setTextColor(SearchView.getTextColor());
 

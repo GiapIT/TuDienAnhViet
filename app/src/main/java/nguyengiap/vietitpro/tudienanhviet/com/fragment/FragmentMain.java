@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -30,6 +31,7 @@ import nguyengiap.vietitpro.tudienanhviet.com.common.Common;
 import nguyengiap.vietitpro.tudienanhviet.com.database.EngVietController;
 import nguyengiap.vietitpro.tudienanhviet.com.model.DictEntity;
 import nguyengiap.vietitpro.tudienanhviet.com.model.EVEntity;
+import nguyengiap.vietitpro.tudienanhviet.com.ui.materialsearch.searchview.IChooseDicationary;
 import nguyengiap.vietitpro.tudienanhviet.com.ui.materialsearch.searchview.SearchAdapter;
 import nguyengiap.vietitpro.tudienanhviet.com.ui.materialsearch.searchview.SearchHistoryTable;
 import nguyengiap.vietitpro.tudienanhviet.com.ui.materialsearch.searchview.SearchView;
@@ -37,7 +39,7 @@ import nguyengiap.vietitpro.tudienanhviet.com.ui.materialsearch.searchview.Searc
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentMain extends Fragment implements IClickListener, View.OnClickListener {
+public class FragmentMain extends Fragment implements IClickListener, View.OnClickListener, IChooseDicationary {
 
     View mMainLayout;
     LinearLayout layout_verb;
@@ -65,7 +67,6 @@ public class FragmentMain extends Fragment implements IClickListener, View.OnCli
         mMainLayout = inflater.inflate(R.layout.fragment_fragment_main, container, false);
         initView();
         getAllDataFromDatabase();
-        initListSearch();
         setSearchView();
         loadAds(mSearchView);
         return mMainLayout;
@@ -148,21 +149,22 @@ public class FragmentMain extends Fragment implements IClickListener, View.OnCli
             mSearchView.setHint("Nhập từ cần tra");
             mSearchView.setDivider(false);
             mSearchView.setVoice(true, this);
+            mSearchView.setOnclickChooseDictionary(this);
             mSearchView.setVoiceText(getString(R.string.speech_prompt));
             mSearchView.setAnimationDuration(SearchView.ANIMATION_DURATION);
             mSearchView.setShadowColor(ContextCompat.getColor(getContext(), R.color.search_shadow_layout));
-            mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    mSearchView.close(false);
-                    return true;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    return false;
-                }
-            });
+//            mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//                @Override
+//                public boolean onQueryTextSubmit(String query) {
+//                    mSearchView.close(false);
+//                    return true;
+//                }
+//
+//                @Override
+//                public boolean onQueryTextChange(String newText) {
+//                    return false;
+//                }
+//            });
             SearchAdapter searchAdapter = new SearchAdapter(getContext(), suggestionsList);
             searchAdapter.setOnItemClickListener(new SearchAdapter.OnItemClickListener() {
                 @Override
@@ -220,5 +222,15 @@ public class FragmentMain extends Fragment implements IClickListener, View.OnCli
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onClickChooseDictionary(boolean isCheckChoose) {
+        if (!isCheckChoose)
+            Toast.makeText(getContext(), "Anh - Việt ", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getContext(), "Việt - Anh", Toast.LENGTH_SHORT).show();
+
+
     }
 }

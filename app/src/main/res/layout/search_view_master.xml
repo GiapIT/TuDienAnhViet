@@ -31,6 +31,17 @@
                 android:paddingRight="@dimen/search_key_line"
                 android:paddingStart="@dimen/search_key_line">
 
+                <TextView
+                    android:background="@drawable/selectbutton_gray"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/app"
+                    android:text="A-V"
+                    android:id="@+id/imageView_change_search"
+                    android:layout_width="@dimen/size_35dp"
+                    android:layout_height="@dimen/size_20dp"
+                 />
                 <ImageView
                     android:id="@+id/imageView_arrow_back"
                     android:layout_width="@dimen/search_icon"
